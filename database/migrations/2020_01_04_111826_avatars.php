@@ -18,6 +18,7 @@ class Avatars extends Migration
             $table->string('display_name');
             $table->string('original_name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
