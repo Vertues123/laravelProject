@@ -21,3 +21,7 @@ Todo:
 * powiadomienie dla zalogowanych adminów przez echo server, gdy jakiś użytkownik się zarejestruje
 
 Ponadto chciałbym żeby lokalne środowiska były dostępne z zewnątrz dla mnie do testów (przez ngrok)
+
+php artisan server
+
+ngrok http 8000
