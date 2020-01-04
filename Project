@@ -1,0 +1,23 @@
+Prosty panel do zarządzania swoim profilem wymagający logowania w oparciu o takie technologie:
+* laravel 6.0
+* mysql
+* laravel echo server + redis
+
+Baza:
+* tabela users: name, email, active 0/1, avatar_id, lastlogin_at, deleted_at (soft delete), timestamps
+* tabela avatars: display_name, original_name, deleted_at (soft delete) timestamps
+* roles: jak uważasz + seeder: admin, user, access
+
+Todo:
+* logowanie (tylko dla osób z rolą access) -> jeśli nie ma innych ról to dostaje tylko pustą stronę i opcję wylogowania
+* reset hasła
+* rejestracja
+* po zalogowaniu:
+- CRUD users (tylko dla roli admin) + soft & hard delete
+- Wyszukiwarka w oparciu o sesję -> users (tylko dla roli admin): po name, email, active, created_at, updated_at, lastlogin_at
+- CRUD avatars (tylko dla roli admin) + soft & hard delete
+- Wyszukiwarka w oparciu o sesję -> avatars (tylko dla roli admin): po display name, original name, created at
+- CRUD profile (tylko dla osób z rolą user + każdy user może edytować tylko swój profil)
+* powiadomienie dla zalogowanych adminów przez echo server, gdy jakiś użytkownik się zarejestruje
+
+Ponadto chciałbym żeby lokalne środowiska były dostępne z zewnątrz dla mnie do testów (przez ngrok)
